@@ -1,0 +1,29 @@
+{
+  "name": "graphviewer",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "3d-force-graph": "^1.70.10",
+    "@tauri-apps/api": "^1.0.1",
+    "ace-builds": "^1.9.3",
+    "ant-design-vue": "^3.2.9",
+    "force-graph": "^1.42.9",
+    "vue": "^3.2.25",
+    "vue-router": "4",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "typescript": "^4.5.4",
+    "unplugin-vue-components": "^0.21.1",
+    "vite": "^2.9.9",
+    "vue-tsc": "^0.34.7"
+  }
+}
