@@ -18,7 +18,7 @@ pub fn read_history(app: tauri::AppHandle) -> Vec<History> {
         Err(e) => {
             println!("{:?}", e);
             vec![]
-        },
+        }
     };
 
     println!("{:?}", historys);

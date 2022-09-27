@@ -44,7 +44,6 @@ pub fn read_csv_schema(file: &str, options: &CsvOptions) -> Schema {
     let df = reader.finish().unwrap();
 
     df.schema().unwrap().as_ref().clone()
-
 }
 
 pub fn read_csv(file: &str, options: &CsvOptions) -> DataFrame {

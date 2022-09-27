@@ -23,18 +23,16 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeMount, onMounted, reactive, ref } from 'vue';
+import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { CREATE } from "../router/name";
-import { invoke } from '@tauri-apps/api';
-import { selectDir } from '../lib/utils';
-import { useStore } from 'vuex';
-import Config from "../components/Config.vue"
-import Recent from "../components/Recent.vue"
-import Create from "../components/Create.vue"
-import { TABLE, WORKSPACE } from '../router/name';
-import { dirname, basename } from '@tauri-apps/api/path';
-import { ProjectInfo } from '../lib/common';
+import { WORKSPACE } from "../router/name";
+import { selectDir } from "../lib/utils";
+import { useStore } from "vuex";
+import Config from "../components/Config.vue";
+import Recent from "../components/Recent.vue";
+import Create from "../components/Create.vue";
+import { basename } from "@tauri-apps/api/path";
+import { ProjectInfo } from "../lib/common";
 
 
 const store = useStore();
@@ -55,12 +53,13 @@ function cancelCreate() {
 async function openProject() {
     const path = await selectDir();
     if (path !== null) {
-        const name = await basename(path)
-        const info = <ProjectInfo>{ name: name, path: path }
-        store.commit('set_opened', info);
+        const name = await basename(path);
+        const info = <ProjectInfo>{ name: name, path: path };
+        store.commit("set_opened", info);
         console.log(info);
         router.push(WORKSPACE);
-    };
+    }
+    ;
 };
 
 </script>

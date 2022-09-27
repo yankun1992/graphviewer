@@ -1,13 +1,13 @@
 import { createStore } from "vuex";
 import { ProjectInfo } from "../lib/common";
-import { AppConfig, get_config } from "../lib/setting";
+import { AppConfig } from "../lib/setting";
 
 interface StoreData {
     appConfig: AppConfig | null,
     isFirstRunning: boolean | null,
     histories: History[],
     openedProject: ProjectInfo,
-};
+}
 
 const store = createStore({
     state() {
@@ -16,7 +16,7 @@ const store = createStore({
             isFirstRunning: null,
             histories: [],
             openedProject: { name: "", path: "" }
-        }
+        };
     },
     mutations: {
         is_first_running(state, is: boolean) {
@@ -26,9 +26,10 @@ const store = createStore({
             state.appConfig = config;
         },
         set_projects_home(state, home: string) {
-            if (state.appConfig === null) { } else {
+            if (state.appConfig === null) {
+            } else {
                 state.appConfig.projects_home = home;
-            };
+            }
         },
         set_histories(state, list: History[]) {
             state.histories = list;
@@ -36,7 +37,7 @@ const store = createStore({
         set_opened(state, rojectInfo: ProjectInfo) {
             state.openedProject = rojectInfo;
         }
-    },
+    }
 
 });
 
